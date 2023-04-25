@@ -1,11 +1,10 @@
 #include "Header.h"
-#pragma comment(lib,"Winmm.lib")
 
 using namespace std;
 
 void RunCommandFile(string, string);
 void RunCommandInput(void);
-void execute(void);
+void execute(string);
 
 //create a class of MineSweeper
 MineSweeper myMineSweeper;
@@ -15,7 +14,6 @@ ifstream inputFile;
 // mode switch
 int main(int argc, char* argv[])
 {
-	PlaySound(TEXT("./music/backround_music.wav"), NULL, SND_FILENAME || SND_ASYNC || SND_LOOP);
 	// error
 	if (argc == 0)
 	{
@@ -48,8 +46,6 @@ int main(int argc, char* argv[])
 		cout << "arg error!" << endl;
 		return 0;
 	}
-
-	PlaySound(NULL, NULL, SND_FILENAME);
 }
 
 // Intent: To run command file
@@ -60,79 +56,31 @@ void RunCommandFile(string commandFile, string outputFileName)
 	ofstream outputFile(outputFileName);
 	cout.rdbuf(outputFile.rdbuf());
 	inputFile.open(commandFile);
-	execute();
+
+	string eachLine;
+	getline(inputFile, eachLine);
+
+	while (1)
+	{
+		execute(eachLine);
+		getline(inputFile, eachLine);
+	}
+
+	inputFile.close();
 	outputFile.close();
 }
 
 // Intent: To run command input
-// Pre: void
+// Pre: Two string
 // Post: void
 void RunCommandInput(void)
 {
 	string eachLine;
-
 	getline(cin, eachLine);
 
 	while (1)
 	{
-		stringstream stringstream(" ");
-		vector<string> inputString;
-		string temp;
-
-		stringstream << eachLine;
-
-		inputString.push_back(eachLine);
-
-		// Split spaces
-		while (stringstream >> temp)
-		{
-			inputString.push_back(temp);
-		}
-
-		stringstream.clear();
-		stringstream.str("");
-
-		// if command is Load
-		if (inputString[1] == "Load")
-		{
-			myMineSweeper.Load(inputString);
-		}
-		// if command is StartGame
-		else if (inputString[1] == "StartGame")
-		{
-			myMineSweeper.StartGame();
-		}
-		// if command is Print
-		else if (inputString[1] == "Print")
-		{
-			myMineSweeper.Print(inputString);
-		}
-		// if command is LeftClick
-		else if (inputString[1] == "LeftClick")
-		{
-			myMineSweeper.LeftClick(inputString);
-		}
-		// if command is RightClick
-		else if (inputString[1] == "RightClick")
-		{
-			myMineSweeper.RightClick(inputString);
-		}
-		// if command is Replay
-		else if (inputString[1] == "Replay")
-		{
-			myMineSweeper.Replay();
-		}
-		// if command is Quit
-		else if (inputString[1] == "Quit")
-		{
-			myMineSweeper.Quit();
-		}
-		// invalid command
-		else
-		{
-			cout << "<" << inputString[0] << "> : Failed" << endl;
-		}
-
+		execute(eachLine);
 		getline(cin, eachLine);
 	}
 }
@@ -140,74 +88,62 @@ void RunCommandInput(void)
 // Intent: execute
 // Pre: void
 // Post: void
-void execute(void)
+void execute(string eachLine)
 {
-	string eachLine;
+	stringstream stringstream(" ");
+	vector<string> inputString;
+	string temp;
 
-	getline(inputFile, eachLine);
+	stringstream << eachLine;
+	inputString.push_back(eachLine);
 
-	while (1)
+	// Split spaces
+	while (stringstream >> temp)
 	{
-		stringstream stringstream(" ");
-		vector<string> inputString;
-		string temp;
-
-		stringstream << eachLine;
-
-		inputString.push_back(eachLine);
-
-		// Split spaces
-		while (stringstream >> temp)
-		{
-			inputString.push_back(temp);
-		}
-
-		stringstream.clear();
-		stringstream.str("");
-
-		// if command is Load
-		if (inputString[1] == "Load")
-		{
-			myMineSweeper.Load(inputString);
-		}
-		// if command is StartGame
-		else if (inputString[1] == "StartGame")
-		{
-			myMineSweeper.StartGame();
-		}
-		// if command is Print
-		else if (inputString[1] == "Print")
-		{
-			myMineSweeper.Print(inputString);
-		}
-		// if command is LeftClick
-		else if (inputString[1] == "LeftClick")
-		{
-			myMineSweeper.LeftClick(inputString);
-		}
-		// if command is RightClick
-		else if (inputString[1] == "RightClick")
-		{
-			myMineSweeper.RightClick(inputString);
-		}
-		// if command is Replay
-		else if (inputString[1] == "Replay")
-		{
-			myMineSweeper.Replay();
-		}
-		// if command is Quit
-		else if (inputString[1] == "Quit")
-		{
-			myMineSweeper.Quit();
-		}
-		// invalid command
-		else
-		{
-			cout << "<" << inputString[0] << "> : Failed" << endl;
-		}
-
-		getline(cin, eachLine);
+		inputString.push_back(temp);
 	}
 
-	inputFile.close();
+	stringstream.clear();
+	stringstream.str("");
+
+	// if command is Load
+	if (inputString[1] == "Load")
+	{
+		myMineSweeper.Load(inputString);
+	}
+	// if command is StartGame
+	else if (inputString[1] == "StartGame")
+	{
+		myMineSweeper.StartGame();
+	}
+	// if command is Print
+	else if (inputString[1] == "Print")
+	{
+		myMineSweeper.Print(inputString);
+	}
+	// if command is LeftClick
+	else if (inputString[1] == "LeftClick")
+	{
+		myMineSweeper.LeftClick(inputString);
+	}
+	// if command is RightClick
+	else if (inputString[1] == "RightClick")
+	{
+		myMineSweeper.RightClick(inputString);
+	}
+	// if command is Replay
+	else if (inputString[1] == "Replay")
+	{
+		myMineSweeper.Replay();
+	}
+	// if command is Quit
+	else if (inputString[1] == "Quit")
+	{
+		myMineSweeper.Quit();
+	}
+	// invalid command
+	else
+	{
+		cout << "<" << inputString[0] << "> : Failed" << endl;
+	}
 }

@@ -1,3 +1,4 @@
+correct
 <StartGame> : Failed
 <Load BoardFile ./boards/board2.txt> : Success
 <StartGame> : Success

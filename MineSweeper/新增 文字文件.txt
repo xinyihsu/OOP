@@ -1,3 +1,0 @@
-MineSweeper.exe CommandFile command2.txt output.txt
-MineSweeper.exe CommandInput
-MineSweeper.exe GUI

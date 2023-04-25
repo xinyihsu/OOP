@@ -6,8 +6,6 @@
 #include <cstring>
 #include <ctype.h>
 #include <vector>
-#include <windows.h>
-#include <mmsystem.h>
 
 #define MAX_VALUE 100
 
@@ -82,15 +80,14 @@ void MineSweeper::Load(vector<string> inputString)
 				}
 			}
 		}
-		// RandomCount or RandomRate
 		else if (command == "RandomCount" || command == "RandomRate")
 		{
 			this->row = atoi(inputString[3].c_str());
 			this->col = atoi(inputString[4].c_str());
 			double appointMine = stod(inputString[5]);
-			int mineRand[2]; // random bomb location
+			int mineRand[2]; //隨機炸彈的位置
 
-			// initialization
+			//初始
 			for (int i = 0; i < this->row; i++)
 			{
 				for (int j = 0; j < this->col; j++)
@@ -99,19 +96,16 @@ void MineSweeper::Load(vector<string> inputString)
 				}
 			}
 
-			// count bombs
+			//計算炸彈數
 			if (command == "RandomRate")
 			{
 				appointMine = appointMine * this->row * this->col;
 			}
-
-			// randomly spawn bombs
+			//隨機產生炸彈
 			for (int i = 0; i < (int)appointMine; i++)
 			{
 				int tempY = rand() % this->row;
 				int tempX = rand() % this->col;
-
-				// Solve the problem of repeated spawning of bombs
 				if (board[tempY][tempX] == 'X')
 				{
 					i--;
@@ -123,20 +117,18 @@ void MineSweeper::Load(vector<string> inputString)
 			}
 		}
 
-		// generate answer board
+		//產生answer board
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
 			{
-				// no bomb
 				if (board[i][j] == 'O')
 				{
 					int count = 0;
-					for (int m = i - 1; m <= i + 1; m++) // row
+					for (int m = i - 1; m <= i + 1; m++) //row
 					{
-						for (int n = j - 1; n <= j + 1; n++) // col
+						for (int n = j - 1; n <= j + 1; n++) //col
 						{
-							// count Surrounding bomb
 							if (board[m][n] == 'X' && m >= 0 && m < this->row && n >= 0 && n < this->col)
 							{
 								count++;
@@ -145,7 +137,6 @@ void MineSweeper::Load(vector<string> inputString)
 					}
 					answerBoard[i][j] = '0' + count;
 				}
-				// answerBoard, bombCount
 				else if (board[i][j] == 'X')
 				{
 					answerBoard[i][j] = 'X';
@@ -154,7 +145,7 @@ void MineSweeper::Load(vector<string> inputString)
 			}
 		}
 
-		// generate game board
+		//產生game board
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
@@ -164,7 +155,6 @@ void MineSweeper::Load(vector<string> inputString)
 		}
 
 		this->loadPerfect = true;
-
 		cout << "<" << inputString[0] << "> : Success" << endl;
 	}
 	else
@@ -178,11 +168,9 @@ void MineSweeper::Load(vector<string> inputString)
 // Post: void
 void MineSweeper::StartGame()
 {
-	// StandBy && finished loading
 	if (gameState == 0 && this->loadPerfect)
 	{
-		this->gameState = 1; // playing
-
+		this->gameState = 1; //變成遊玩狀態
 		cout << "<StartGame> : Success" << endl;
 	}
 	else
@@ -198,12 +186,9 @@ void MineSweeper::Print(vector<string> inputString)
 {
 	string infor = inputString[2];
 
-	// if infor is "GameBoard"
 	if (infor == "GameBoard")
 	{
 		cout << "<Print " << infor << "> : " << endl;
-
-		// print
 		for (int i = 0; i < this->row; i++)
 		{
 			for (int j = 0; j < this->col; j++)
@@ -213,28 +198,26 @@ void MineSweeper::Print(vector<string> inputString)
 			cout << endl;
 		}
 	}
-	// if infor is "GameState"
 	else if (infor == "GameState")
 	{
 		switch (this->gameState)
 		{
-		case 0: // Standby
+		case 0:
+
 			cout << "<Print " << infor << "> : " << "Standby" << endl;
 			break;
-		case 1: // Playing
+		case 1:
 			cout << "<Print " << infor << "> : " << "Playing" << endl;
 			break;
-		case 2: // GameOver
+		case 2:
 			cout << "<Print " << infor << "> : " << "GameOver" << endl;
 			break;
 		}
 	}
-	// if infor is "GameAnswer"
 	else if (infor == "GameAnswer")
 	{
 		cout << "<Print " << infor << "> : " << endl;
 
-		// print
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
@@ -245,23 +228,18 @@ void MineSweeper::Print(vector<string> inputString)
 
 		}
 	}
-
-	// if infor is "BombCount"
 	else if (infor == "BombCount")
 	{
 		cout << "<Print " << infor << "> : " << bombCount << endl;
 	}
-	// if infor is "FlagCount"
 	else if (infor == "FlagCount")
 	{
 		cout << "<Print " << infor << "> : " << flagCount << endl;
 	}
-	// if infor is "OpenBlankCount"
 	else if (infor == "OpenBlankCount")
 	{
 		cout << "<Print " << infor << "> : " << openBlankCount << endl;
 	}
-	// if infor is "RemainBlankCount"
 	else if (infor == "RemainBlankCount")  //未改
 	{
 		cout << "<Print " << infor << "> : " << remainBlankCount << endl;
