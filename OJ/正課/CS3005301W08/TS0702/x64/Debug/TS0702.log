@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W08\TS0702\Atoi.h(80,36): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W08\TS0702\Atoi.h(83,32): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+  TS0702.vcxproj -> C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W08\x64\Debug\TS0702.exe

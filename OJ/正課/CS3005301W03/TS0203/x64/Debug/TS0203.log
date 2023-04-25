@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W03\TS0203\main.cpp(20,35): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+  LINK : 最後的累加連結找不到或未建置 C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W03\x64\Debug\TS0203.exe，正在執行完整連結
+  TS0203.vcxproj -> C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W03\x64\Debug\TS0203.exe

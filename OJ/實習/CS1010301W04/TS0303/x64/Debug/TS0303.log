@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W04\TS0303\main.cpp(95,5): error C2084: 函式 'int main(void)' 的主體已經被宣告了
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W04\TS0303\main.cpp(14): message : 請參閱 'main' 之前的定義
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W04\TS0303\main.cpp(107,38): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W04\TS0303\main.cpp(120,40): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W04\TS0303\main.cpp(131,41): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失

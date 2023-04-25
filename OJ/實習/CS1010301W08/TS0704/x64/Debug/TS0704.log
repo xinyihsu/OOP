@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W08\TS0704\main.cpp(32,31): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W08\TS0704\main.cpp(33,31): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+main.obj : error LNK2019: 在函式 "int __cdecl LevenshteinDistance(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LevenshteinDistance@@YAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)main 中參考了無法解析的外部符號
+C:\Users\dora5\Desktop\program\OOP\OJ\實習\CS1010301W08\x64\Debug\TS0704.exe : fatal error LNK1120: 1 個無法解析的外部符號

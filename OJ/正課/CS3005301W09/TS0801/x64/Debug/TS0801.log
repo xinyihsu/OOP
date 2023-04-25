@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(99,20): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(143,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(154,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(165,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(187,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(198,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(209,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(234,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\TS0801\Polynomial.h(244,48): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+  TS0801.vcxproj -> C:\Users\dora5\Desktop\program\OOP\OJ\正課\CS3005301W09\x64\Debug\TS0801.exe
