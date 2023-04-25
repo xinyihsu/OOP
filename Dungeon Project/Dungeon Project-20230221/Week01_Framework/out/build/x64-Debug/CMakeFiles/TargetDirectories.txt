@@ -1,0 +1,4 @@
+C:/Users/dora5/Desktop/program/Week01_Framework/out/build/x64-Debug/CMakeFiles/Week01_FunctionBasics.dir
+C:/Users/dora5/Desktop/program/Week01_Framework/out/build/x64-Debug/CMakeFiles/Week01_IO.dir
+C:/Users/dora5/Desktop/program/Week01_Framework/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/dora5/Desktop/program/Week01_Framework/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,55 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Week02_Framework",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Week02::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Week02-Debug-0c244df5c66fbdb09da4.json",
+					"name" : "Week02",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/dora5/Desktop/program/OOP/Dungeon Project/Dungeon Project-20230307/Week02_Framework/out/build/x64-Debug",
+		"source" : "C:/Users/dora5/Desktop/program/OOP/Dungeon Project/Dungeon Project-20230307/Week02_Framework"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

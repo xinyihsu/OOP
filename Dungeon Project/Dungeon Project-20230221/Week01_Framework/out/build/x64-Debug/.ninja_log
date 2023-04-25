@@ -1,0 +1,5 @@
+# ninja log v5
+2	1188	6990431639769122	CMakeFiles/Week01_FunctionBasics.dir/Week01_FunctionBasics/main.cpp.obj	552b337ee154a949
+41	1227	6990431639769122	CMakeFiles/Week01_IO.dir/Week01_IO/main.cpp.obj	a4a58693a9a3942c
+1193	2549	6990431652636639	Week01_FunctionBasics.exe	30d4072dcee750d6
+1228	2561	6990431652786649	Week01_IO.exe	ef0355336d7fd75d
